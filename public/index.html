@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <p class="eyebrow">Stay consistent</p>
+          <h1>Habit Tracker</h1>
+          <p class="subtitle">Track what matters and see your progress over time.</p>
+        </div>
+        <div class="summary">
+          <div>
+            <span class="label">Total habits</span>
+            <span id="habit-count" class="value">0</span>
+          </div>
+          <div>
+            <span class="label">Completed today</span>
+            <span id="today-count" class="value">0</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Add a habit</h2>
+        <form id="habit-form">
+          <input
+            id="habit-name"
+            type="text"
+            name="habit-name"
+            placeholder="e.g. Morning walk"
+            required
+          />
+          <button type="submit">Add habit</button>
+        </form>
+      </section>
+
+      <section class="card habits">
+        <h2>Your habits</h2>
+        <div id="habit-list" class="habit-list">
+          <p class="empty">Add your first habit to start tracking.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="chart-header">
+          <div>
+            <h2>Progress over time</h2>
+            <p class="hint">Daily completions based on the habits you track.</p>
+          </div>
+          <div class="legend">
+            <span class="legend-dot"></span>
+            <span>Habits completed</span>
+          </div>
+        </div>
+        <canvas id="progress-chart" height="140"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>Habit totals</h2>
+        <p class="hint">How often you complete each habit.</p>
+        <canvas id="habit-chart" height="140"></canvas>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
